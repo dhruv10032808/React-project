@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useState,Fragment } from 'react';
 import AddUser from './components/Users/AddUser';
 import UserList from './components/Users/UserList';
 const App = () => {
@@ -8,7 +8,9 @@ const App = () => {
             return [...prevUsersList,{name:uName,age:uAge,id:Math.random().toString()}];
        })
   }
-  return(<div><AddUser onAddUser={addUserHandler}/>
-  <UserList users={usersList}/></div>)
+  return(<Fragment>
+     <AddUser onAddUser={addUserHandler}/>
+  <UserList users={usersList}/>
+  </Fragment>)
 }
 export default App;
